@@ -2,8 +2,8 @@
 
 function Home() {
   return (
-    <div>
-      home
+    <div className="">
+      
     </div>
   );
 }
