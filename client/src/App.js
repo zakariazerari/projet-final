@@ -1,9 +1,11 @@
+import Markup from "./pages/Markup";
+
 
 
 function App() {
   return (
     <div>
-      zakaria
+      <Markup/>
     </div>
   );
 }
