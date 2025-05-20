@@ -19,11 +19,11 @@ function Header() {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-12 font-medium text-base">
+        <ul className="hidden lg:flex items-center gap-12 font-medium text-base ">
           {menuItems.map((item, index) => (
             <li
               key={index}
-              className="transform transition duration-300 hover:scale-110 hover:rotate-[2deg]"
+              className="text-xl transform transition duration-300 hover:scale-110 hover:rotate-[2deg]"
             >
               <Link
                 to={item.to}
@@ -44,7 +44,7 @@ function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="text-3xl block lg:hidden text-blue-700"
+          className="text-3xl block lg:hidden text-blue-800 "
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle Menu"
         >

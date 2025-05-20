@@ -2,7 +2,7 @@
 
 function Footer() {
   return (
-   <footer className="bg-blue-600 text-white py-10 shadow-2xl">
+   <footer className="bg-blue-800 text-white py-10 shadow-2xl">
   <div className="container mx-auto px-6 text-center">
     <h4 className="text-2xl font-bold mb-2 drop-shadow-lg">Eden Medical Transport</h4>
     <p className="text-sm text-blue-100 mb-4 drop-shadow">

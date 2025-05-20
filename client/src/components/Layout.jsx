@@ -7,7 +7,7 @@ function Layout
 () {
     return (
       
-      <div>
+      <div className="overflow-x-hidden">
        <Header/>
        <Outlet/>
         <Footer/>
