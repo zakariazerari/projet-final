@@ -16,5 +16,6 @@ app.use(express.urlencoded({extended: false}))
 
 
 app.use('/api/medicals', require('./routes/medicalRoutes'))
+
 app.use(errorHandler)
  app.listen(port, () => console.log(`server started on port ${port} `))

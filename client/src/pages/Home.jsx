@@ -1,17 +1,10 @@
 import image4 from "../assets/image4.jpg";
 
-import { Phone,  } from "lucide-react";
 import { motion } from "framer-motion";
 import { Accessibility, HeartPulse, Ambulance } from "lucide-react";
 
 function Home() {
-  const contacts = [
-    { label: "Alameda County", number: "510-957-8383" },
-    { label: "San Francisco County", number: "415-994-1442" },
-    { label: "Contra Costa County", number: "925-465-0366" },
-    { label: "Santa Clara County", number: "408-579-9775" },
-    { label: "San Mateo County", number: "650-474-5777" },
-  ];
+ 
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-blue-100 text-gray-800">
@@ -33,12 +26,170 @@ function Home() {
           </p>
           <a
             href="#contact"
-            className="bg-violet-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-violet-700 transition transform hover:scale-105 shadow-lg"
+            className="bg-gradient-to-r from-violet-600 to-blue-500 text-white px-6 py-4 rounded-lg font-semibold hover:shadow-xl transition-all"
           >
             Book Now
           </a>
         </div>
       </section>
+      <section
+      className="min-h-screen bg-gradient-to-br from-indigo-50 to-white flex items-center justify-center px-4 py-10"
+      id="contact"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white w-full max-w-4xl p-10 rounded-3xl shadow-2xl"
+      >
+        <h2 className="text-3xl font-bold text-center text-violet-800 mb-10">
+          Book a Medical Ride
+        </h2>
+
+        <form className="space-y-6">
+          {/* Type of Service & Mobility */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="text-sm font-semibold block mb-2">
+                Type of Service
+              </label>
+              <select className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white">
+                <option>Non-Emergency</option>
+                <option>Emergency</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-sm font-semibold block mb-2">Mobility</label>
+              <select className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white">
+                <option>Wheelchair</option>
+                <option>Stretcher / Gurney</option>
+                <option>Sedan</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Date & Time */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="text-sm font-semibold block mb-2">
+                Transport Date
+              </label>
+              <input
+                type="date"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+              />
+            </div>
+            <div>
+              <label className="text-sm font-semibold block mb-2">
+                Pick-Up Time
+              </label>
+              <input
+                type="time"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+              />
+            </div>
+          </div>
+
+          {/* Addresses */}
+          <div>
+            <label className="text-sm font-semibold block mb-2">
+              Pick-Up Address
+            </label>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+              placeholder="123 Main St, City, ZIP"
+            />
+          </div>
+          <div>
+            <label className="text-sm font-semibold block mb-2">
+              Destination Address
+            </label>
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+              placeholder="456 Elm St, City, ZIP"
+            />
+          </div>
+
+          {/* Contact Info */}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="text-sm font-semibold block mb-2">
+                Patient's Name
+              </label>
+              <input
+                type="text"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+                placeholder="John Doe"
+              />
+            </div>
+            <div>
+              <label className="text-sm font-semibold block mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+                placeholder="(123) 456-7890"
+              />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="text-sm font-semibold block mb-2">
+                Your Email
+              </label>
+              <input
+                type="email"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+                placeholder="example@email.com"
+              />
+            </div>
+            <div>
+              <label className="text-sm font-semibold block mb-2">
+                Payment Method
+              </label>
+              <select
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Select a payment method
+                </option>
+                <option value="insurance">Insurance</option>
+                <option value="cash">Cash</option>
+                <option value="card">Credit/Debit Card</option>
+                <option value="medicare">Medicare</option>
+                <option value="medicaid">Medicaid</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Special Note */}
+          <div>
+            <label className="text-sm font-semibold block mb-2">
+              Special Requirements
+            </label>
+            <textarea
+              rows="4"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 bg-white"
+              placeholder="Any special instructions..."
+            ></textarea>
+          </div>
+
+          {/* Submit */}
+          <button className="w-full bg-violet-600 text-white py-3 rounded-xl hover:bg-violet-700 transition font-semibold text-lg">
+            Submit Request
+          </button>
+        </form>
+      </motion.div>
+    </section>
+
+
+
 
        <section className="bg-gradient-to-br from-indigo-50 to-violet-50 py-24 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center overflow-x-hidden">
@@ -89,89 +240,6 @@ function Home() {
         </motion.div>
       </div>
     </section>  
-        
-   
-      {/* Contact Info */}
-   <section id="contact" className="bg-white py-20">
-      <div className="container mx-auto px-6">
-        <motion.h3
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-bold mb-12 text-center text-violet-800 drop-shadow"
-        >
-          Contact Us
-        </motion.h3>
-
-        <div className="grid md:grid-cols-2 gap-10">
-          {/* Form */}
-          <motion.form
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-indigo-100 via-white to-violet-100 p-8 rounded-2xl shadow-xl"
-          >
-            <h4 className="text-xl font-semibold mb-6 text-violet-800">Send us a message</h4>
-            <div className="mb-4">
-              <label className="block text-gray-700 mb-1">Full Name</label>
-              <input
-                type="text"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-                placeholder="John Doe"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 mb-1">Email</label>
-              <input
-                type="email"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-                placeholder="you@example.com"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 mb-1">Message</label>
-              <textarea
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-                rows="5"
-                placeholder="Your message..."
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-violet-600 text-white py-3 rounded-lg hover:bg-violet-700 transition shadow-md"
-            >
-              Send Message
-            </button>
-          </motion.form>
-
-          {/* Contact Info with animation */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-gray-800"
-          >
-            <h4 className="text-xl font-semibold mb-6 text-violet-800">Contact Information</h4>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {contacts.map((contact, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-start space-x-4 p-5 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition"
-                >
-                  <Phone className="text-violet-600 w-6 h-6 mt-1" />
-                  <div>
-                    <p className="font-semibold text-gray-800">{contact.label}</p>
-                    <p className="text-sm text-gray-600">{contact.number}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-
       {/* Mission Statement */}
       <section className="bg-gradient-to-r from-violet-100 via-white to-indigo-100 py-20">
         <div className="container mx-auto px-6 text-center">
